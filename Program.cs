@@ -1,4 +1,6 @@
-﻿namespace Evaluation
+﻿using System;
+
+namespace Evaluation
 {
     internal class Program
     {
@@ -15,6 +17,7 @@
                 }
 
             }
+           
         }
 
         static void swap(int a, int b)
@@ -22,6 +25,14 @@
             int temp = a;
             a = b;
             b = temp;
+        }
+
+        static void print(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(i + " ");
+            }
         }
 
         static int search(int[] arr, int s)
@@ -44,12 +55,10 @@
         {
             int[] array = { 5, 2, 6, 9, 4, 7, 8, 1, 3 };
 
-            sort(array);
             Console.WriteLine("Sorting..... ");
-            foreach (int i in array)
-            {
-                Console.Write(i + " ");
-            }
+            sort(array);
+            print(array);
+            
             Console.WriteLine();
             Console.WriteLine("|||||||||||||||||||||||||||||||||||||");
 
