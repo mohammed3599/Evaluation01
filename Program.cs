@@ -6,33 +6,21 @@ namespace Evaluation
     {
         static void sort(int[] arr)
         {
-            for (int i = 0; i < arr.Length - 1; i++) 
+            int a = arr.Length;
+            for (int i = 0; i < a - 1; i++) 
             {
-                for (int j = 0; j < arr.Length - i - 1; j++)
+                for (int j = 0; j < a - i - 1; j++)
                 {
                     if (arr[j] > arr[j + 1])
                     {
-                        swap(arr[j], arr[j + 1]);
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
                     }
                 }
 
             }
            
-        }
-
-        static void swap(int a, int b)
-        {
-            int temp = a;
-            a = b;
-            b = temp;
-        }
-
-        static void print(int[] arr)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(i + " ");
-            }
         }
 
         static int search(int[] arr, int s)
@@ -53,12 +41,15 @@ namespace Evaluation
         }
         static void Main(string[] args)
         {
-            int[] array = { 5, 2, 6, 9, 4, 7, 8, 1, 3 };
+            int[] array = { 5, 23, 61, 94, 46, 79, 84, 12, 37 };
 
             Console.WriteLine("Sorting..... ");
             sort(array);
-            print(array);
-            
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+
             Console.WriteLine();
             Console.WriteLine("|||||||||||||||||||||||||||||||||||||");
 
@@ -69,7 +60,7 @@ namespace Evaluation
             int b = search(array, a);
             if (b != -1)
             {
-                Console.WriteLine(a + " is exist in " + b + " index");
+                Console.WriteLine(a + " is exist in  index " + b );
             }
             else
             {
